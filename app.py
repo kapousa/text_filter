@@ -51,7 +51,8 @@ def toxicvalidation():  # put application's code here
                 mood = "Entered text is {}".format(v)
 
         mood = "" if mood == "None" else mood
-
+        if mood == "Entered text is -":
+            mood = mood.replace("-", "not toxic")
         return render_template('is_toxic.html', mood=mood, user_text=user_text)
     else:
         return render_template('is_toxic.html', mood="", user_text="")
