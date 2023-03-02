@@ -14,7 +14,7 @@ def ethicalvalidation():  # put application's code here
         user_text = request.form.get('user_text')
 
         #URL = 'http://127.0.0.1:5000/api/v1/92640494227942/classifydata'
-        URL = 'https://brontomind.herokuapp.com/api/v1/92640494227942/classifydata'
+        URL = 'https://bmapiproject.herokuapp.com/api/v1/92640494227942/classifydata'
 
         # defining a params dict for the parameters to be sent to the API
         PARAMS = {'data': user_text}
@@ -39,7 +39,7 @@ def toxicvalidation():  # put application's code here
         user_text = request.form.get('user_text')
 
         #URL = 'http://127.0.0.1:5000/api/v1/79165892196618/classifydata'
-        URL = 'https://brontomind.herokuapp.com/api/v1/79165892196618/classifydata'
+        URL = 'https://bmapiproject.herokuapp.com/api/v1/79165892196618/classifydata'
 
         # defining a params dict for the parameters to be sent to the API
         PARAMS = {'data': user_text}
