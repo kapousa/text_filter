@@ -1,6 +1,8 @@
 import requests as requests
 from flask import Flask, render_template, request
 
+from lib.TextRephraser import TextRephraser
+
 app = Flask(__name__)
 
 
@@ -58,6 +60,28 @@ def toxicvalidation():  # put application's code here
         return render_template('is_toxic.html', mood=mood, user_text=user_text)
     else:
         return render_template('is_toxic.html', mood="", user_text="")
+
+@app.route('/ethicguard', methods=['POST'])
+def ethicguard():  # put application's code here
+    return render_template("/ethicguard.html")
+
+@app.route('/rephrasegenius', methods=['POST'])
+def rephrasegenius():  # put application's code here
+    return render_template("/rephrasegenius.html")
+
+@app.route('/maintanetext', methods=['POST'])
+def maintanetext():  # put application's code here
+    user_text = request.form.get('user_text')
+    action = request.form.get('action')
+    text_rephraser_obj = TextRephraser()
+
+    if action == "rephrase":
+        maintained_text = text_rephraser_obj.reprashe_sentence(user_text)
+
+    if action == "summary":
+        maintained_text = text_rephraser_obj.summary_sentence(user_text)
+
+    return render_template("/rephrasegenius.html", maintained_text=maintained_text, user_text=user_text)
 
 if __name__ == '__main__':
     app.run()

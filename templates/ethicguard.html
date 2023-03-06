@@ -317,28 +317,22 @@
         </div>
         <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
             <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-                <h1><a href="#" rel="dofollow">Is it ethical text?</a></h1>
+                <h1><a href="#" rel="dofollow">EthicGuard</a></h1>
             </div>
             <div class="formbg-outer">
                 <div class="formbg">
                     <div class="formbg-inner padding-horizontal--48">
-                        <span class="padding-bottom--15">Enter your text to validate it</span>
-                        <form id="stripe-login" action="/ethicalvalidation" method="post">
+                        <span class="padding-bottom--15">Select Validation Type</span>
+                        <form id="stripe-login" action="/toxicvalidation" method="post">
                             <div class="field padding-bottom--24">
-                                <label for="email"></label>
-                                <textarea name="user_text" cols="47" rows="10" value="{{ user_text }}"></textarea>
-                            </div>
-                            <div class="field padding-bottom--24">
-                                <input type="submit" name="submit" value="Continue">
+                                <input type="submit" name="submit" value="Toxic">
                             </div>
                         </form>
-                        <div class="formbg-outer">
-                            <div class="formbg">
-                                <div class="formbg-inner padding-horizontal--48">
-                                    <p style="color: crimson; align-content: center"> {{ mood }}</p>
-                                </div>
+                        <form id="stripe-login" action="/ethicalvalidation" method="post">
+                            <div class="field padding-bottom--24">
+                                <input type="submit" name="submit" value="Ethical">
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -350,14 +344,12 @@
                 </p>
             </div>
             <div class="align-center">
-                <p class="align-center" style="text-align: center; margin-top: 20px;">Powered By: <a class="footer-link"
-                                                                                                     target="_blank"
-                                                                                                     href="https://www.brontomind.tech/">BrontoMind
-                    AI Platform</a></p>
+                <p class="align-center" style="text-align: center; margin-top: 20px;">Powered By: <a class="footer-link" target="_blank" href="https://www.brontomind.tech/">BrontoMind AI Platform</a></p>
             </div>
         </div>
     </div>
 </div>
+
 </body>
 
 </html>
