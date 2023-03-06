@@ -61,11 +61,11 @@ def toxicvalidation():  # put application's code here
     else:
         return render_template('is_toxic.html', mood="", user_text="")
 
-@app.route('/ethicguard', methods=['POST'])
+@app.route('/ethicguard')
 def ethicguard():  # put application's code here
     return render_template("/ethicguard.html")
 
-@app.route('/rephrasegenius', methods=['POST'])
+@app.route('/rephrasegenius')
 def rephrasegenius():  # put application's code here
     return render_template("/rephrasegenius.html")
 
