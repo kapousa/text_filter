@@ -7,7 +7,7 @@ class TextRephraser:
 
     def reprashe_sentence(self, user_text):
         # Set up the OpenAI API key
-        openai.api_key = "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"
+        openai.api_key = "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"
 
         # Define the GPT-3 prompt that will be used to generate rephrased paragraphs
         text = "Please rephrase the follwing text: {}".format(user_text)
@@ -38,7 +38,7 @@ class TextRephraser:
 
     def summary_sentence(self, user_text):
         # Set up the OpenAI API key
-        openai.api_key = "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"
+        openai.api_key = "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"
 
         # Define the GPT-3 prompt that will be used to generate rephrased paragraphs
         text = "Please summary the follwing text: {}".format(user_text)
