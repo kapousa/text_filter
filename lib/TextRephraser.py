@@ -6,8 +6,14 @@ import openai
 
 class TextRephraser:
 
+    k_path = ''
+
+    def __init__(self, k_path):
+        ''' Constructor for this class. '''
+        self.k_path = k_path
+
     def reprashe_sentence(self, user_text):
-        _path = "{0}{1}".format(os.getcwd(), '/app/static/apk.gkey')
+        _path = "{0}{1}".format(self.k_path, '/static/apk.gkey')
         with open(_path) as f:
             contents = f.read()
 
@@ -40,7 +46,7 @@ class TextRephraser:
         return rephrased_paragraphs
 
     def summary_sentence(self, user_text):
-        _path = "{0}{1}".format(os.getcwd(), '/app/static/apk.gkey')
+        _path = "{0}{1}".format(self.k_path, '/static/apk.gkey')
         with open(_path) as f:
             contents = f.read()
 
