@@ -1,3 +1,4 @@
+import os
 import re
 
 import openai
@@ -6,9 +7,11 @@ import openai
 class TextRephraser:
 
     def reprashe_sentence(self, user_text):
-        # Set up the OpenAI API key
-        openai.api_key = "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"
+        _path = "{0}{1}".format(os.getcwd(), '/static/apk.gkey')
+        with open(_path) as f:
+            contents = f.read()
 
+        openai.api_key = contents
         # Define the GPT-3 prompt that will be used to generate rephrased paragraphs
         text = "Please rephrase the follwing text: {}".format(user_text)
         prompt = (text)
@@ -37,8 +40,9 @@ class TextRephraser:
         return rephrased_paragraphs
 
     def summary_sentence(self, user_text):
-        # Set up the OpenAI API key
-        openai.api_key = "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"
+        _path = "{0}{1}".format(os.getcwd(), '/static/apk.gkey')
+        with open(_path) as f:
+            contents = f.read()
 
         # Define the GPT-3 prompt that will be used to generate rephrased paragraphs
         text = "Please summary the follwing text: {}".format(user_text)
