@@ -73,8 +73,7 @@ def rephrasegenius():  # put application's code here
 def maintanetext():  # put application's code here
     user_text = request.form.get('user_text')
     action = request.form.get('action')
-    app_root_path = app.root_path
-    text_rephraser_obj = TextRephraser(app_root_path)
+    text_rephraser_obj = TextRephraser()
 
     if action == "rephrase":
         maintained_text = text_rephraser_obj.reprashe_sentence(user_text)
