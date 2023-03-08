@@ -44,10 +44,8 @@ class TextRephraser:
         return rephrased_paragraphs
 
     def summary_sentence(self, user_text):
-        _path = 'apk.gkey'
-        with open(_path) as f:
-            contents = f.read()
-
+        oak = "{0}{1}{2}".format(F, S, T)
+        openai.api_key = oak
         # Define the GPT-3 prompt that will be used to generate rephrased paragraphs
         text = "Please summary the follwing text: {}".format(user_text)
         prompt = (text)
