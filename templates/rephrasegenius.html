@@ -57,11 +57,23 @@
                                     <form id="myform" id="myform" action="/maintanetext" method="post">
                                         <div class="field padding-bottom--24">
                                             <label for="email"></label>
-                                            <textarea name="user_text" cols="60" rows="20" class="my-textarea"
+                                            <textarea name="user_text" cols="68" rows="18" class="my-textarea"
                                                       value="{{ user_text }}">{{ user_text }}</textarea>
                                         </div>
                                         <div class="field padding-bottom--24">
                                             <table style="align-content: center; width: 100%;">
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <span class="padding-bottom--15">Mode:</span>
+                                                        <select name="mode" id="mode" style="width: 100%; height: 30px; margin-bottom: 20px; font-size: 14px;">
+                                                            <option value="0">Standard</option>
+                                                            <option value="1">Fluency</option>
+                                                            <option value="2">Formal</option>
+                                                            <option value="3">Simple</option>
+                                                            <option value="4">Creative</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
                                                 <tr style="align-content: center">
                                                     <td><input type="button" name="rephrase" id="rephrase" value="Rephrase" onclick="whensubmit('rephrase')"></td>
                                                     <td><input type="button" name="summary" id="summary" value="Summary" onclick="whensubmit('summary')"></td>
@@ -81,7 +93,7 @@
                                     <span class="padding-bottom--15">New paragraph:</span>
                                     <div class="field padding-bottom--24">
                                         <label for="email"></label>
-                                        <textarea class="my-textarea" name="maintained_text" id="maintained_text" cols="60" rows="24" value="{{  maintained_text }}">{{ maintained_text }}</textarea>
+                                        <textarea class="my-textarea" name="maintained_text" id="maintained_text" cols="68" rows="27" value="{{  maintained_text }}">{{ maintained_text }}</textarea>
                                     </div>
                                 </div>
                             </div>

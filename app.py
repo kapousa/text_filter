@@ -73,13 +73,16 @@ def rephrasegenius():  # put application's code here
 def maintanetext():  # put application's code here
     user_text = request.form.get('user_text')
     action = request.form.get('action')
+    process_type = request.form.get("mode") if action == "rephrase" else str(5)
     text_rephraser_obj = TextRephraser()
 
-    if action == "rephrase":
-        maintained_text = text_rephraser_obj.reprashe_sentence(user_text)
+    maintained_text = text_rephraser_obj.maintane_sentence(user_text, action, process_type)
 
-    if action == "summary":
-        maintained_text = text_rephraser_obj.summary_sentence(user_text)
+    # if action == "rephrase":
+    #     maintained_text = text_rephraser_obj.reprashe_sentence(user_text)
+    #
+    # if action == "summary":
+    #     maintained_text = text_rephraser_obj.summary_sentence(user_text)
 
     return render_template("/rephrasegenius.html", maintained_text=maintained_text, user_text=user_text)
 
