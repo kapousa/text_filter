@@ -22,13 +22,9 @@ class TextRephraser:
         oak = "{0}{1}{2}".format(F, S, T)
         openai.api_key = oak
         text_process = self.text_process[_process]
-        text_mode = self.modes[int(_mode)] if _mode != "5" else ''
+        text_mode = self.modes[int(_mode)]
         # Define the GPT-3 prompt that will be used to generate rephrased paragraphs
-        if text_mode != "":
-            text = "{0} in {1} way: {2}".format(text_process, text_mode, user_text)
-        else:
-            text = "{0}: {1}".format(text_process, user_text)
-
+        text = "{0} in {1} way: {2}".format(text_process, text_mode, user_text)
         prompt = (text)
         # Define the OpenAI API parameters
         parameters = {

@@ -73,7 +73,7 @@ def rephrasegenius():  # put application's code here
 def maintanetext():  # put application's code here
     user_text = request.form.get('user_text')
     action = request.form.get('action')
-    process_type = request.form.get("mode") if action == "rephrase" else str(5)
+    process_type = request.form.get("mode")
     text_rephraser_obj = TextRephraser()
 
     maintained_text = text_rephraser_obj.maintane_sentence(user_text, action, process_type)
