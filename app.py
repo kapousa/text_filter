@@ -67,7 +67,7 @@ def ethicguard():  # put application's code here
 
 @app.route('/rephrasegenius')
 def rephrasegenius():  # put application's code here
-    return render_template("/rephrasegenius.html")
+    return render_template("/rephrasegenius.html", mode=0)
 
 @app.route('/maintanetext', methods=['POST'])
 def maintanetext():  # put application's code here
@@ -84,7 +84,7 @@ def maintanetext():  # put application's code here
     # if action == "summary":
     #     maintained_text = text_rephraser_obj.summary_sentence(user_text)
 
-    return render_template("/rephrasegenius.html", maintained_text=maintained_text, user_text=user_text)
+    return render_template("/rephrasegenius.html", maintained_text=maintained_text, user_text=user_text, mode=process_type)
 
 if __name__ == '__main__':
     app.run()
